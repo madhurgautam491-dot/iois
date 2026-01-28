@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📝 Sign Up - ZOZO AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .signup-container {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 25px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 100%;
+            border: 3px solid #00ffcc;
+            box-shadow: 0 20px 60px rgba(0, 255, 204, 0.3);
+        }
+        
+        .logo {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, #00ffcc, #0088ff);
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        h1 {
+            color: #00ffcc;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #00ffcc;
+        }
+        
+        .btn-primary {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(90deg, #00ffcc, #0088ff);
+            color: black;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: transform 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+        
+        .login-link {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #94a3b8;
+        }
+        
+        .login-link a {
+            color: #00ffcc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .benefits {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+        }
+        
+        .benefits h3 {
+            color: #00ffcc;
+            margin-bottom: 1rem;
+        }
+        
+        .benefits ul {
+            padding-left: 1.5rem;
+        }
+        
+        .benefits li {
+            margin: 0.5rem 0;
+            color: #cbd5e1;
+        }
+        
+        .terms {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #64748b;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="logo">Z</div>
+        <h1>Create Account</h1>
+        <p class="subtitle">Join ZOZO AI for free 15-minute trial</p>
+        
+        <form id="signupForm" onsubmit="signup(event)">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required placeholder="Enter your WhatsApp number">
+            </div>
+            
+            <div class="form-group">
+                <label for="plan">Select Plan</label>
+                <select id="plan">
+                    <option value="free">Free Trial (15 minutes)</option>
+                    <option value="pro">PRO Plan (₹49/month)</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn-primary">
+                Create Account & Start Chatting
+            </button>
+        </form>
+        
+        <div class="login-link">
+            Already have an account? <a href="login.html">Login here</a>
+        </div>
+        
+        <div class="benefits">
+            <h3>🎁 Signup Benefits:</h3>
+            <ul>
+                <li>15 minutes free AI chat immediately</li>
+                <li>Access to premium AI models</li>
+                <li>Code generation in multiple languages</li>
+                <li>Web research and content creation</li>
+                <li>Easy upgrade to PRO for ₹49/month</li>
+            </ul>
+        </div>
+        
+        <div class="terms">
+            By signing up, you agree to our <a href="#" style="color: #00ffcc;">Terms</a> and <a href="#" style="color: #00ffcc;">Privacy Policy</a>
+        </div>
+    </div>
+
+    <script>
+        function signup(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const plan = document.getElementById('plan').value;
+            
+            // Save user data in localStorage
+            localStorage.setItem('zozo_user', JSON.stringify({
+                name: name,
+                email: email,
+                phone: phone,
+                plan: plan,
+                signupDate: new Date().toISOString()
+            }));
+            
+            // Show success message
+            alert(`✅ Welcome ${name}! Your account has been created.`);
+            
+            // Redirect based on plan
+            if (plan === 'pro') {
+                window.location.href = 'payment.html';
+            } else {
+                window.location.href = 'chat.html';
+            }
+        }
+        
+        // Auto-fill if already signed up
+        window.onload = function() {
+            const savedUser = localStorage.getItem('zozo_user');
+            if (savedUser) {
+                const user = JSON.parse(savedUser);
+                alert(`Welcome back ${user.name}! Redirecting to chat...`);
+                window.location.href = 'chat.html';
+            }
+        };
+    </script>
+</body>
+</html>
