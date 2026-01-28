@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💳 Payment - ZOZO AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .payment-container {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 25px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 100%;
+            border: 3px solid #00ffcc;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 255, 204, 0.3);
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #00ffcc, #0088ff);
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        h1 {
+            color: #00ffcc;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .plan-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid #00ffcc;
+        }
+        
+        .price {
+            font-size: 4rem;
+            color: #00ffcc;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .duration {
+            font-size: 1.2rem;
+            color: #94a3b8;
+        }
+        
+        .features {
+            text-align: left;
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .features li {
+            margin: 0.8rem 0;
+            color: #cbd5e1;
+        }
+        
+        .features li i {
+            color: #00ffcc;
+            margin-right: 0.8rem;
+        }
+        
+        /* UPI PAYMENT */
+        .upi-section {
+            background: rgba(0, 255, 204, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 2px solid #00ffcc;
+        }
+        
+        .upi-id {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00ffcc;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            border: 2px dashed #00ffcc;
+        }
+        
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            background: white;
+            margin: 1rem auto;
+            border-radius: 10px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-weight: bold;
+        }
+        
+        /* BUTTONS */
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, #00ffcc, #0088ff);
+            color: black;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid #00ffcc;
+        }
+        
+        .steps {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            text-align: left;
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+        }
+        
+        .step-number {
+            background: #00ffcc;
+            color: black;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="payment-container">
+        <div class="logo">Z</div>
+        <h1>Upgrade to PRO</h1>
+        <p>Unlock unlimited AI power for just ₹49/month</p>
+        
+        <div class="plan-card">
+            <h2>PRO PLAN</h2>
+            <div class="price">₹49</div>
+            <div class="duration">per month</div>
+            
+            <ul class="features">
+                <li><i class="fas fa-check"></i> Unlimited chat access</li>
+                <li><i class="fas fa-check"></i> Premium AI models</li>
+                <li><i class="fas fa-check"></i> Code generation</li>
+                <li><i class="fas fa-check"></i> Web research</li>
+                <li><i class="fas fa-check"></i> Content creation</li>
+                <li><i class="fas fa-check"></i> Priority support</li>
+            </ul>
+        </div>
+        
+        <div class="upi-section">
+            <h3><i class="fas fa-qrcode"></i> Pay via UPI</h3>
+            <div class="upi-id">7877373299@fam</div>
+            
+            <div class="qr-code">
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem;">📱</div>
+                    <div>UPI QR Code</div>
+                    <div style="font-size: 0.8rem; margin-top: 0.5rem;">7877373299@fam</div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 1rem; color: #94a3b8;">
+                Scan QR or copy UPI ID
+            </p>
+        </div>
+        
+        <div class="steps">
+            <h3>Payment Steps:</h3>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div>Pay ₹49 to UPI: 7877373299@fam</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>Take payment screenshot</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div>Send screenshot to WhatsApp: +91 7877373299</div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div>Get PRO access within 5 minutes</div>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <a href="chat.html?pro=true" class="btn btn-primary" onclick="activatePro()">
+                <i class="fas fa-bolt"></i> I've Paid
+            </a>
+            <a href="index.html" class="btn btn-secondary">
+                <i class="fas fa-home"></i> Back Home
+            </a>
+        </div>
+        
+        <p style="margin-top: 2rem; font-size: 0.9rem; color: #94a3b8;">
+            Need help? WhatsApp: +91 7877373299
+        </p>
+    </div>
+
+    <script>
+        // Activate PRO
+        function activatePro() {
+            // Save PRO status in localStorage
+            localStorage.setItem('zozo_pro', 'true');
+            localStorage.setItem('zozo_pro_expiry', Date.now() + (30 * 24 * 60 * 60 * 1000)); // 30 days
+            
+            // Show success message
+            alert('🎉 Thank you! Your PRO access will be activated within 5 minutes after verification.');
+            
+            // Redirect to chat
+            setTimeout(() => {
+                window.location.href = 'chat.html?pro=true';
+            }, 1000);
+        }
+        
+        // Auto-check if PRO already activated
+        window.onload = function() {
+            const isPro = localStorage.getItem('zozo_pro') === 'true';
+            const expiry = localStorage.getItem('zozo_pro_expiry');
+            
+            if (isPro && expiry && Date.now() < parseInt(expiry)) {
+                alert('✅ You already have PRO access! Redirecting to chat...');
+                window.location.href = 'chat.html?pro=true';
+            }
+        };
+    </script>
+</body>
+</html>
